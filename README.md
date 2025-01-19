@@ -1,66 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+This project is a User Management System implemented as part of a Laravel interview assignment. The application demonstrates the integration of Laravel for backend API services and React for the frontend. It adheres to industry-standard design patterns such as DAO (Data Access Object), BO (Business Object), and Service Layer while implementing caching and validations
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Objective
+To design and implement a User Management System that allows creating, updating, deleting, and retrieving user records while incorporating robust validations, efficient caching, and a modular architecture.
 
-## About Laravel
+Technologies Used
+Frontend
+Framework: React
+State Management: React Hooks
+Styling: CSS (modular styling for components)
+Hosting: Netlify
+Framework: Laravel
+Database: MySQL
+Caching: Laravel Cache (file-based)
+Validation: Laravel Form Requests
+API Testing: Postman
+Features
+CRUD Operations:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Create, Read, Update, and Delete users.
+Validation rules applied to ensure data integrity.
+Modular Architecture:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+DAO: Handles direct database interactions.
+BO: Encapsulates business logic.
+Service Layer: Bridges controllers and BO for clean code structure.
+Controllers: Handles HTTP requests and returns responses.
+Validation:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Applied at the request level using Laravel Form Request.
+Ensures fields like email and password meet requirements.
+Unique email validation while updating user records.
+Caching:
 
-## Learning Laravel
+Uses Laravel's caching mechanism for optimized performance.
+Reduces redundant database queries by storing user data in cache.
+Cache invalidation implemented for user updates and deletions.
+Frontend Features:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+User-friendly interface.
+Responsive design.
+Properly styled tables for displaying user data.
+Pop-up notifications for success messages.
+API Endpoints
+Base URL
+http://localhost:8001/api
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Endpoints
+HTTP Method	Endpoint	Description
+GET	        /users	    Retrieve all users
+POST	    /users	    Create a new user
+GET	       /users/{id}	Retrieve a single user
+PUT	       /users/{id}	Update an existing user
+DELETE	   /users/{id}	Delete an existing user
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Frontend Pages
+1. All Users
+Displays a table of all users, including name, email, created_at, and updated_at.
+Includes buttons for editing and deleting users.
+A button to navigate to the "Create User" page.
+2. Create User
+A form for creating new users.
+Validation for fields:
+Name: Required
+Email: Required and unique
+Password: Required with a minimum length of 8 characters.
+3. Edit User
+Pre-filled form for updating an existing user's details.
+Email validation ignores the current user’s email during updates.
 
-## Laravel Sponsors
+Data Caching:
+User data is cached using Cache::remember to optimize performance.
+Cache Invalidation:
+Cache is cleared automatically on user creation, update, or deletion
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
