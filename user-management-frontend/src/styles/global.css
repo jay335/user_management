@@ -1,0 +1,116 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Form Styling */
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  /* Create Button */
+  .create-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .create-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* User List Styles */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  ul li button {
+    margin-left: 10px;
+  }
+  
+  ul li button.edit {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  ul li button.delete {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  ul li button.edit:hover,
+  ul li button.delete:hover {
+    opacity: 0.8;
+  }
+  
+  ul li button {
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
